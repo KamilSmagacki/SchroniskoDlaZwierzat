@@ -1,9 +1,18 @@
+package AnimalMethods;
+
+import Animals.Cat;
+import Animals.Dog;
+import Animals.Rabbit;
+
 import java.util.Random;
 
 public class RandomAnimal {
+    int wylosownaLiczba;
+
+    Random rd = new Random();
+
      String getRandomAnimal() {
-        Random rd = new Random();
-        int wylosownaLiczba = rd.nextInt(3);
+        wylosownaLiczba = rd.nextInt(3);
         switch (wylosownaLiczba) {
             case 0 -> {
                 return new Cat().getType();
@@ -15,7 +24,7 @@ public class RandomAnimal {
                 return new Rabbit().getType();
             }
             default -> {
-                return null;
+                return "";
             }
         }
     }
