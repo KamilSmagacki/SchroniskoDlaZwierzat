@@ -1,10 +1,11 @@
 package Animals;
 
-import AnimalMethods.AnimalShelter;
-
 public class Cat extends Animal {
-    public int iloscKotow = 0;
-    AnimalShelter as = new AnimalShelter();
+    private static int iloscKotow = 0;
+
+    public Cat() {
+        iloscKotow++;
+    }
 
     @Override
     public String getType() {
@@ -12,13 +13,7 @@ public class Cat extends Animal {
     }
 
     @Override
-    public void getInstanceNumber() {
-        String[] pets = as.getFilledPetsTable();
-        for (String animal : pets) {
-            if(animal.equals("kot")) {
-                iloscKotow++;
-            }
-        }
-        iloscKotow++;
+    public int getInstanceNumber() {
+        return iloscKotow;
     }
 }

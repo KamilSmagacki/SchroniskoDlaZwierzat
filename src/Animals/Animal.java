@@ -1,6 +1,6 @@
 package Animals;
 
-public abstract class Animal {
-    abstract String getType();
-    abstract void getInstanceNumber();
+abstract public class Animal {
+    abstract public String getType();
+    abstract public int getInstanceNumber();
 }

@@ -1,30 +1,29 @@
 package AnimalMethods;
 
+import Animals.Animal;
 import Animals.Cat;
 import Animals.Dog;
 import Animals.Rabbit;
 
 import java.util.Random;
 
-public class RandomAnimal {
+public class RandomAnimal extends Random {
     int wylosownaLiczba;
 
-    Random rd = new Random();
-
-     String getRandomAnimal() {
-        wylosownaLiczba = rd.nextInt(3);
+    Animal getRandomAnimal() {
+        wylosownaLiczba = nextInt(3);
         switch (wylosownaLiczba) {
             case 0 -> {
-                return new Cat().getType();
+                return new Cat();
             }
             case 1 -> {
-                return new Dog().getType();
+                return new Dog();
             }
             case 2 -> {
-                return new Rabbit().getType();
+                return new Rabbit();
             }
             default -> {
-                return "";
+                return null;
             }
         }
     }
